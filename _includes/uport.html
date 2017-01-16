@@ -1,0 +1,28 @@
+<script src="assets/js/uportlib.min.js"></script>
+<script>
+var Uport = uportlib.Uport
+
+var uport = new Uport('MyDApp')
+var web3 = uport.getWeb3()
+
+$('#askForUport').click(function () {
+  uport.getUserPersona()
+     .then((persona) => {
+       var profile = persona.profile
+       console.log(profile)
+       if (profile.image) {
+         $('#uport-image').attr('src','https://ipfs.infura.io'+profile.image.contentUrl)
+       }
+       $('#uport-name').text(profile.name)
+       $('#uport-address').text(profile.address)
+       $('#uport-log').text(JSON.stringify(profile))
+
+     })
+})
+
+$('#getAccountsButton').click(function () {
+  web3.eth.getAccounts(function(error, accounts) {
+    $('#uport-log-web3').text(JSON.stringify(accounts))
+  })
+})
+</script>

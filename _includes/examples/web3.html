@@ -1,0 +1,24 @@
+<section style="border: 1px solid #eee; margin-bottom: 1rem">
+  <div class="row">
+    <div class="col-sm-12">
+<pre><code>
+var uport = new uportlib.Uport('MyDApp')
+var web3 = uport.getWeb3()
+
+web3.eth.getAccounts(function(error, accounts) {
+  console.log(accounts)
+})
+      </code></pre>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <samp id="uport-log-web3"></samp>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <a href="#" id="getAccountsButton" class="btn btn-primary">web3.eth.getAccounts()</a>
+    </div>
+  </div>
+</section>
