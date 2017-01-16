@@ -16,8 +16,12 @@ $('#askForUport').click(function (e) {
        }
        $('#uport-name').text(profile.name)
        $('#uport-log').text(JSON.stringify(profile)).show()
-
-
+      window.Intercom('boot', {
+        app_id: 'g16ho63p',
+        name: profile.name,
+        created_at: 1234567890,
+      });
+      Intercom('trackEvent', 'connect-demo');
      })
   return false;
 })
@@ -27,6 +31,8 @@ $('#getAccountsButton').click(function (e) {
   web3.eth.getAccounts(function(error, accounts) {
     $('#uport-address').text(accounts[0])
     $('#uport-log-web3').text(JSON.stringify(accounts)).show()
+
+    Intercom('trackEvent', 'web3-getaccounts-demo');
   })
   return false;
 })
