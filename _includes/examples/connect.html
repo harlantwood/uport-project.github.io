@@ -1,24 +1,22 @@
-<div class="row" style="border: 1px solid #eee; margin-bottom: 1rem">
-<div class="col-md-12 col-lg-9">
-<pre><code>
+<div class="row code-example">
+  <div class="col-md-12 col-lg-9">
+{% highlight js linenos %}
 var uport = new uportlib.Uport('MyDApp')
 uport.getUserPersona()
      .then((persona) => {
        let profile = persona.profile
        console.log(profile)
      })
-</code></pre>
-<h5>Output</h5>
-<samp id="uport-log"></samp>
-</div>
-<div class="col-md-12 col-lg-3">
-  <div class="card" id="uport-card" style="width: 200px">
-    <img class="card-img-top" width="200" height="200" id="uport-image" src="/assets/images/logo@3x.png">
-    <div class="card-block">
-      <h4 class="card-title" id="uport-name"></h4>
-      <p class="card-text" id="uport-address"></p>
-      <a href="#" id="askForUport" class="btn btn-primary">Fetch Uport</a>
+{% endhighlight %}
+    <div class="console" id="uport-log"></div>
+  </div>
+  <div class="col-md-12 col-lg-3">
+    <div class="card" id="uport-card" style="width: 200px">
+      <img class="card-img-top" width="200" height="200" id="uport-image" src="/assets/images/logo@3x.png">
+      <div class="card-block">
+        <h4 class="card-title" id="uport-name"></h4>
+        <a href="#" id="askForUport" class="btn btn-primary">Fetch Uport</a>
+      </div>
     </div>
   </div>
-</div>
 </div>

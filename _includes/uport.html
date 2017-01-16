@@ -5,7 +5,8 @@ var Uport = uportlib.Uport
 var uport = new Uport('MyDApp')
 var web3 = uport.getWeb3()
 
-$('#askForUport').click(function () {
+$('#askForUport').click(function (e) {
+  e.stopPropagation()
   uport.getUserPersona()
      .then((persona) => {
        var profile = persona.profile
@@ -14,15 +15,19 @@ $('#askForUport').click(function () {
          $('#uport-image').attr('src','https://ipfs.infura.io'+profile.image.contentUrl)
        }
        $('#uport-name').text(profile.name)
-       $('#uport-address').text(profile.address)
-       $('#uport-log').text(JSON.stringify(profile))
+       $('#uport-log').text(JSON.stringify(profile)).show()
+
 
      })
+  return false;
 })
 
-$('#getAccountsButton').click(function () {
+$('#getAccountsButton').click(function (e) {
+  e.stopPropagation()
   web3.eth.getAccounts(function(error, accounts) {
-    $('#uport-log-web3').text(JSON.stringify(accounts))
+    $('#uport-address').text(accounts[0])
+    $('#uport-log-web3').text(JSON.stringify(accounts)).show()
   })
+  return false;
 })
 </script>
