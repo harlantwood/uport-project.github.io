@@ -3,9 +3,6 @@ var Uport = uportlib.Uport
 
 var uport = new Uport('uPortDeveloper')
 var web3 = uport.getWeb3()
-// work around due to web3 requiring  a from address
-web3.eth.defaultAccount = '0xB42E70a3c6dd57003f4bFe7B06E370d21CDA8087'
-
 var statusAbi = [{'constant': false, 'inputs': [{'name': 'status', 'type': 'string'}], 'name': 'updateStatus', 'outputs': [], 'type': 'function'}, {'constant': false, 'inputs': [{'name': 'addr', 'type': 'address'}], 'name': 'getStatus', 'outputs': [{'name': '', 'type': 'string'}], 'type': 'function'}]
 var statusContract = web3.eth.contract(statusAbi)
 var status = statusContract.at('0xB42E70a3c6dd57003f4bFe7B06E370d21CDA8087')
