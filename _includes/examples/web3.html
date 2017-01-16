@@ -13,8 +13,11 @@ web3.eth.getAccounts(function(error, accounts) {
   <div class="col-md-12 col-lg-3">
     <div class="card" id="uport-card">
       <div class="card-block">
-        <p class="card-text">Try it your self:</p>
-        <p class="card-text" id="uport-address"></p>
+        <p class="card-text">Try it yourself:</p>
+        <p class="card-text eth-address">
+          <a id="uport-address" data-toggle="tooltip" data-placement="bottom" title="View your address on the block explorer">
+          </a>
+        </p>
         <a href="#" id="getAccountsButton" class="btn btn-primary">Call getAccounts()</a>
       </div>
     </div>

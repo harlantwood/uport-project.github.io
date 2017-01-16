@@ -15,7 +15,9 @@
   </head>
   <body>
     {% include navbar.html %}
+    {% if page.hero %}
     {% include hero.html %}
+    {% endif %}
     <div class="container">
     {{content}}
     </div>

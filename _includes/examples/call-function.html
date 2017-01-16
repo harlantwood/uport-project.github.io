@@ -1,0 +1,31 @@
+<div class="row code-example">
+  <div class="col-md-12 col-lg-9">
+{% highlight js linenos %}
+var uport = new uportlib.Uport('MyDApp')
+var web3 = uport.getWeb3()
+
+var statusAbi = [{'constant': false, 'inputs': [{'name': 'status', 'type': 'string'}], 'name': 'updateStatus', 'outputs': [], 'type': 'function'}, {'constant': false, 'inputs': [{'name': 'addr', 'type': 'address'}], 'name': 'getStatus', 'outputs': [{'name': '', 'type': 'string'}], 'type': 'function'}]
+
+var statusContract = web3.eth.contract(statusAbi)
+var statusFunction = statusContract.at('0xB42E70a3c6dd57003f4bFe7B06E370d21CDA8087')
+
+statusFunction.updateStatus(text, function(error, txhash) {
+  console.log(txhash)
+})
+{% endhighlight %}
+    <div class="console" id="uport-log-function-call"></div>
+  </div>
+  <div class="col-md-12 col-lg-3">
+    <div class="card" id="uport-card">
+      <div class="card-block">
+        <p class="card-text">Try it yourself:</p>
+        <input type="text" id="uport-status-text" name="uport-status" value="Having fun"/>
+        <p class="card-text eth-tx">
+          <a id="uport-status-txhash" data-toggle="tooltip" data-placement="bottom" title="See your transaction on the block explorer">
+          </a></p>
+        <a href="#" id="setStatus" class="btn btn-primary">Call updateStatus()</a>
+      </div>
+    </div>
+  </div>
+</div>
+

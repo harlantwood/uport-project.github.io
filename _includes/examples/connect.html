@@ -4,8 +4,8 @@
 var uport = new uportlib.Uport('MyDApp')
 uport.getUserPersona()
      .then((persona) => {
-       let profile = persona.profile
-       console.log(profile)
+       console.log(persona.profileAddress)
+       console.log(persona.profile)
      })
 {% endhighlight %}
     <div class="console" id="uport-log"></div>
@@ -15,6 +15,10 @@ uport.getUserPersona()
       <img class="card-img-top" width="200" height="200" id="uport-image" src="/assets/images/logo@3x.png">
       <div class="card-block">
         <h4 class="card-title" id="uport-name"></h4>
+        <p class="card-text eth-address">
+          <a id="uport-profile-address" data-toggle="tooltip" data-placement="bottom" title="View your address on the blockexplorer">
+          </a>
+        </p>
         <a href="#" id="askForUport" class="btn btn-primary">Fetch Uport</a>
       </div>
     </div>
