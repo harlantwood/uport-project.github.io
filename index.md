@@ -4,9 +4,9 @@ hero:  true
 title: Uport for Developers
 ---
 
-## Try now
+## Get Started
 
-To do try the following you will need to have the uPort mobile app installed.
+The interactive tutorials on this site require the use of the uPort mobile app. If you don't have the mobile app installed, [sign up for our alpha](https://uport.me/signup)
 
 ### Connect with uPort
 
