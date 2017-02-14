@@ -1,12 +1,10 @@
 <div class="row code-example">
   <div class="col-md-12 col-lg-9">
 {% highlight js linenos %}
-var uport = new uportlib.Uport('MyDApp')
-uport.getUserPersona()
-     .then((persona) => {
-       console.log(persona.profileAddress)
-       console.log(persona.profile)
-     })
+var uport = new uportconnect.Connect('MyDApp')
+uport.requestCredentials().then((credentials) => {
+  console.log(credentials)
+}     
 {% endhighlight %}
     <div class="console" id="uport-log"></div>
   </div>

@@ -1,7 +1,7 @@
 <div class="row code-example">
   <div class="col-md-12 col-lg-9">
 {% highlight js linenos %}
-var uport = new uportlib.Uport('MyDApp')
+var uport = new uportconnect.Connect('MyDApp')
 var web3 = uport.getWeb3()
 
 web3.eth.getAccounts(function(error, accounts) {

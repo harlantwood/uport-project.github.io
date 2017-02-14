@@ -1,7 +1,7 @@
 (function() {
-var Uport = uportlib.Uport
+var Connect = uportconnect.Connect;
 
-var uport = new Uport('uPortDeveloper')
+var uport = new Connect('uPortDeveloper', {client_id: '0xa517fa10cba16682664d54a5c8baa0d2604fe402'})
 var web3 = uport.getWeb3()
 var statusAbi = [{'constant': false, 'inputs': [{'name': 'status', 'type': 'string'}], 'name': 'updateStatus', 'outputs': [], 'type': 'function'}, {'constant': false, 'inputs': [{'name': 'addr', 'type': 'address'}], 'name': 'getStatus', 'outputs': [{'name': '', 'type': 'string'}], 'type': 'function'}]
 var statusContract = web3.eth.contract(statusAbi)
@@ -13,21 +13,18 @@ window.statusFunction = status;
 
 $('#askForUport').click(function (e) {
   e.stopPropagation()
-  uport.getUserPersona()
-     .then((persona) => {
-       console.log(persona.profileAddress)
-       var profile = persona.profile
-       console.log(profile)
-       if (profile.image) {
-         $('#uport-image').attr('src','https://ipfs.infura.io'+profile.image.contentUrl)
+  uport.requestCredentials().then((credentials) => {
+       console.log(credentials)
+       if (credentials.image) {
+         $('#uport-image').attr('src','https://ipfs.infura.io'+credentials.image.contentUrl)
        }
-       $('#uport-name').text(profile.name)
-       $('#uport-profile-address').text(persona.profileAddress)
-       $('#uport-profile-address').attr('href','https://ropsten.io/address/' + persona.profileAddress)
-       $('#uport-log').text(JSON.stringify(profile)).show()
+       $('#uport-name').text(credentials.name)
+       $('#uport-profile-address').text(credentials.address)
+       $('#uport-profile-address').attr('href','https://ropsten.io/address/' + credentials.address)
+       $('#uport-log').text(JSON.stringify(credentials)).show()
       window.Intercom('boot', {
         app_id: 'g16ho63p',
-        name: profile.name,
+        name: credentials.name,
         created_at: 1234567890,
       });
       Intercom('trackEvent', 'connect-demo')
