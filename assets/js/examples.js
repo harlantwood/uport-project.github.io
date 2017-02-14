@@ -1,7 +1,7 @@
 (function() {
 var Connect = uportconnect.Connect;
 
-var uport = new Connect('uPortDeveloper', {client_id: '0xa517fa10cba16682664d54a5c8baa0d2604fe402'})
+var uport = new Connect('uPortDeveloper', {clientId: '0xa517fa10cba16682664d54a5c8baa0d2604fe402'})
 var web3 = uport.getWeb3()
 var statusAbi = [{'constant': false, 'inputs': [{'name': 'status', 'type': 'string'}], 'name': 'updateStatus', 'outputs': [], 'type': 'function'}, {'constant': false, 'inputs': [{'name': 'addr', 'type': 'address'}], 'name': 'getStatus', 'outputs': [{'name': '', 'type': 'string'}], 'type': 'function'}]
 var statusContract = web3.eth.contract(statusAbi)
