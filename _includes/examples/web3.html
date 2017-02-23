@@ -1,8 +1,11 @@
 <div class="row code-example">
   <div class="col-md-12 col-lg-9">
 {% highlight js linenos %}
-var uport = new uportconnect.Connect('MyDApp')
-var web3 = uport.getWeb3()
+import { Connect } from 'uport-connect'
+
+let uport = new Connect('MyDApp')
+
+let web3 = uport.getWeb3()
 
 web3.eth.getAccounts(function(error, accounts) {
   console.log(accounts)
@@ -23,4 +26,3 @@ web3.eth.getAccounts(function(error, accounts) {
     </div>
   </div>
 </div>
-
