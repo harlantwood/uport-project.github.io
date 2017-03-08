@@ -24,7 +24,7 @@ Each type has some companion fields, described below.
 
 `requested` A list of requested attestations. Each entry in the list is of the form 
 
-```
+```javascript
 {type: "physicalAddress", issuer: "0xabcdef"}. 
 ```
 
@@ -74,7 +74,7 @@ These are the payload fields of the corresponding JSON Web Tokens for a few exam
 
 Request:
 
-```
+```javascript
 {
     type: "authReq",
     iss: "0xabcdef",
@@ -85,7 +85,7 @@ Request:
 
 Response:
 
-```
+```javascript
 {
     type: "authResp",
     iss: "0x12345678",
@@ -97,7 +97,7 @@ Response:
 
 Request:
 
-```
+```javascript
 {
     type: "shareReq",
     iss: "0xabcdef",
@@ -110,7 +110,7 @@ Request:
 
 Response:
 
-```
+```javascript
 {
     type: "shareResp",
     iss: "0x12345678",
@@ -126,7 +126,7 @@ Response:
 
 Request:
 
-```
+```javascript
 {
     type: "attReq",
     iss: "0xabcdef",
@@ -139,7 +139,7 @@ Request:
 
 Response:
 
-```
+```javascript
 {
     type: "attResp",
     iss: "0x12345678",
@@ -154,7 +154,7 @@ Response:
 
 Request:
 
-```
+```javascript
 {
     type: "storeReq",
     iss: "0xabcdef",
@@ -166,7 +166,7 @@ Request:
 
 Response (Optional?):
 
-```
+```javascript
 {
     type: "storeResp",
     iss: "0x12345678",

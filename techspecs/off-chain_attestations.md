@@ -18,7 +18,7 @@ A service can create attestations, provide them to the user as well as request a
 
 The following is the format of the “payload” part of the JWT:
 
-```
+```javascript
 {
     iss: <uPortId of issuer>,
     sub: <uPortId of subject>,
