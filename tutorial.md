@@ -20,7 +20,7 @@ We will create this app in two steps:
 
 Clone the `uport-connect` repository locally, and build it:
 
-{% highlight js linenos %}
+{% highlight shell %}
 git clone https://github.com/uport-project/uport-connect
 cd uport-connect
 npm install
